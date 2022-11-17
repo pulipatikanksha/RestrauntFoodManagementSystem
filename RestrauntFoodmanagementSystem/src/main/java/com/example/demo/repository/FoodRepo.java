@@ -1,5 +1,9 @@
 package com.example.demo.repository;
 
-public interface FoodRepo {
+import org.springframework.stereotype.Repository;
+import com.example.demo.entity.FoodItems;
+
+@Repository
+public interface FoodRepo extends JpaRepository<FoodItems, Long>{
 
 }

@@ -16,7 +16,7 @@ table, th, td {
 <title>Insert title here</title>
 </head>
 <body>
-    <h1>Restraunt Food Management System</h1>
+    <h1>Le-Gourmet Food Center</h1>
     <form action="/new">
         <input type="submit" value="CREATE NEW FOOD ITEM" />
     </form>

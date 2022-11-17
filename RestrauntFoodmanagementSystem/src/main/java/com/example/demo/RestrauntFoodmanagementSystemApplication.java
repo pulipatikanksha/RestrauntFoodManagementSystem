@@ -15,15 +15,16 @@ public class RestrauntFoodmanagementSystemApplication {
 		
 		FoodService foodRepo = context.getBean(FoodService.class);
 		
+		/*
 		FoodItems item = new FoodItems();
         item.setItem_name("biryani");
         item.setItem_number(101);
         item.setAvailability("Yes");
         item.setPrice(200);
         item.setType("Indian");
-        foodRepo.addItems(item);
-        
-        
+        foodRepo.addItems(item);  */
+		
+		System.out.println(foodRepo.getFoodItems());
 		
 	}
 

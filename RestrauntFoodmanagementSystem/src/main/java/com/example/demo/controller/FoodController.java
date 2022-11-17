@@ -14,7 +14,7 @@ public class FoodController {
 	@Autowired
 	FoodService foodService;
 	
-	@GetMapping("/get")
+	@GetMapping("/index")
 	public ModelAndView getFoodItems(Model model) {
 		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("FoodItem", foodService.getFoodItems());

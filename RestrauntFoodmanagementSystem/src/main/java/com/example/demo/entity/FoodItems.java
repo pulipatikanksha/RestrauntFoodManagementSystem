@@ -1,7 +1,14 @@
 package com.example.demo.entity;
 
-public class FoodItems {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="RFIM")
+public class FoodItems {
+	
+	@Id
 	private int item_number;
 	private String item_name;
 	private String type;

@@ -21,7 +21,6 @@ public class RestrauntFoodmanagementSystemApplication {
         item.setAvailability("Yes");
         item.setPrice(200);
         item.setType("Indian");
-        
         foodRepo.addItems(item);
         
         

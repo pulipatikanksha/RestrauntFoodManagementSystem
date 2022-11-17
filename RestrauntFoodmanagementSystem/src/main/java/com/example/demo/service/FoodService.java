@@ -17,4 +17,8 @@ public class FoodService {
 	public List<FoodItems> getFoodItems(){
 		return foodRepo.findAll();
 	}
+
+	public void addItems(FoodItems item) {
+		foodRepo.save(item);
+	}
 }

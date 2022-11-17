@@ -7,21 +7,19 @@ public class FoodItems {
 	private String type;
 	private float price;
 	private String availability;
-	private String action;
 
 	public FoodItems() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public FoodItems(int item_number, String item_name, String type, float price, String availability, String action) {
+	public FoodItems(int item_number, String item_name, String type, float price, String availability) {
 		super();
 		this.item_number = item_number;
 		this.item_name = item_name;
 		this.type = type;
 		this.price = price;
 		this.availability = availability;
-		this.action = action;
 	}
 
 	public int getItem_number() {
@@ -64,17 +62,9 @@ public class FoodItems {
 		this.availability = availability;
 	}
 
-	public String getAction() {
-		return action;
-	}
-
-	public void setAction(String action) {
-		this.action = action;
-	}
-
 	@Override
 	public String toString() {
 		return "FoodItems [item_number=" + item_number + ", item_name=" + item_name + ", type=" + type + ", price="
-				+ price + ", availability=" + availability + ", action=" + action + "]";
+				+ price + ", availability=" + availability + "]";
 	}
 }

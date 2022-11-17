@@ -17,7 +17,7 @@ public class FoodController {
 	@GetMapping("/get")
 	public ModelAndView getFoodItems(Model model) {
 		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("FoodItem", foodService.getFood_item());
+		mv.addObject("FoodItem", foodService.getFoodItems());
 		return mv;
 	}
 }

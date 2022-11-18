@@ -26,6 +26,7 @@ public class RestrauntFoodmanagementSystemApplication {
 		
 		System.out.println(foodRepo.getFoodItems());
 		
+		
 	}
 
 }

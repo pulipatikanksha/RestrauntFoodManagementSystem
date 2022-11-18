@@ -1,6 +1,8 @@
 package com.example.demo.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,6 +11,7 @@ import javax.persistence.Table;
 public class FoodItems {
 	
 	@Id
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int item_number;
 	private String item_name;
 	private String type;
@@ -17,7 +20,11 @@ public class FoodItems {
 
 	public FoodItems() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+	
+	public FoodItems(int item_number) {
+		super();
+		this.item_number = item_number;
 	}
 
 	public FoodItems(int item_number, String item_name, String type, float price, String availability) {

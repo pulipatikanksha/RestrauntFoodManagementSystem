@@ -12,22 +12,17 @@ public class FoodItems {
 	
 	@Id
 	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int item_number;
+	private String item_number;
 	private String item_name;
 	private String type;
-	private float price;
+	private String price;
 	private String availability;
 
 	public FoodItems() {
 		super();
 	}
 	
-	public FoodItems(int item_number) {
-		super();
-		this.item_number = item_number;
-	}
-
-	public FoodItems(int item_number, String item_name, String type, float price, String availability) {
+	public FoodItems(String item_number, String item_name, String type, String price, String availability) {
 		super();
 		this.item_number = item_number;
 		this.item_name = item_name;
@@ -36,11 +31,11 @@ public class FoodItems {
 		this.availability = availability;
 	}
 
-	public int getItem_number() {
+	public String getItem_number() {
 		return item_number;
 	}
 
-	public void setItem_number(int item_number) {
+	public void setItem_number(String item_number) {
 		this.item_number = item_number;
 	}
 
@@ -60,11 +55,11 @@ public class FoodItems {
 		this.type = type;
 	}
 
-	public float getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(float price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 

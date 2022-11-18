@@ -16,6 +16,7 @@ import com.example.demo.service.FoodService;
 
 @RestController
 public class FoodController {
+	
 	@Autowired
 	FoodService foodService;
 	
@@ -46,10 +47,17 @@ public class FoodController {
 	}
 	
 	@GetMapping("/editItem")
-	public ModelAndView editItem(@RequestParam int item_number) {
+	public ModelAndView editItem(@RequestParam("item_number") String item_number) {
 		ModelAndView mv = new ModelAndView("editItem");
-		FoodItems updatedItems = FoodService.getFoodItems(item_number);
-		mv.addObject("FoodItem", new FoodItems());
+		FoodItems updatedItems = foodService.getFoodItems(item_number);
+		mv.addObject("FoodItem", updatedItems);
+		return mv;
+	}
+	
+	@GetMapping("/deleteItem")
+	public ModelAndView deleteCourse(@RequestParam("item_number") String item_number) {
+		ModelAndView mv = new ModelAndView("redirect:/homePage");
+		foodService.deleteCourseById(item_number);
 		return mv;
 	}
 	

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -49,8 +50,8 @@ public class FoodController {
 	@GetMapping("/editItem")
 	public ModelAndView editItem(@RequestParam("item_number") String item_number) {
 		ModelAndView mv = new ModelAndView("editItem");
-		FoodItems updatedItems = foodService.getFoodItems(item_number);
-		mv.addObject("FoodItem", updatedItems);
+		//FoodItems updatedItems = foodService.getFoodItems(item_number);
+		mv.addObject("FoodItem", foodService.getFoodItems(item_number));
 		return mv;
 	}
 	
@@ -60,5 +61,6 @@ public class FoodController {
 		foodService.deleteCourseById(item_number);
 		return mv;
 	}
+	
 	
 }

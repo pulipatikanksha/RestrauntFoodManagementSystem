@@ -16,7 +16,7 @@ public class FoodItems {
 	private String item_name;
 	private String type;
 	private String price;
-	private String availability;
+	private String availability; 
 
 	public FoodItems() {
 		super();

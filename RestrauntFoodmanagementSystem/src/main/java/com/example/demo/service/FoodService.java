@@ -21,15 +21,17 @@ public class FoodService {
 	}
 	
 	public void save(FoodItems foodItem) {
-		foodRepo.save(foodItem);
+		this.foodRepo.save(foodItem);
+		//this.courseRepository.save(course);
+
 	}
 
 	public FoodItems getFoodItems(String item_number) {
-		Optional<FoodItems> updatedItem = foodRepo.findById(item_number);
-		return updatedItem.get();
+		//FoodItems updatedItem = foodRepo.findById(item_number);
+		return foodRepo.findById(item_number).get();
 	}
 
-	public void deleteCourseById(String item_number) {
+	public void deleteItem(String item_number) {
 		this.foodRepo.deleteById(item_number);
 	}
 }

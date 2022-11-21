@@ -16,36 +16,24 @@
 	<h4 align="center" style="color: red">* marked items entry is
 		compulsory</h4>
 	<div align="center">
-		<form:form action="/saveItem" method="post" modelAttribute="foodItem">
-			<table>
-				<tr>
-					<td>The Item Number:</td>
-					<td><input type="text" name="item_number" readonly="readonly"
-						value="${foodItem.item_number}"></td>
-				</tr>
-				<tr>
-					<td>The Item Name:</td>
-					<td><input type="text" name="item_name" readonly="readonly"
-						value="${foodItem.item_name}"></td>
-				</tr>
-				<tr>
-					<td>The Cuisine:</td>
-					<td><input type="text" name="type" readonly="readonly"
-						value="${foodItem.type}"></td>
-				</tr>
-				<tr>
-					<td>*Enter New price:</td>
-					<td><input type="text" name="price" value="${foodItem.price}">
-					</td>
-				</tr>
-				<tr>
-					<td>*Enter New availability:</td>
-					<td><input type="text" name="availability"
-						value="${foodItem.availability}"></td>
-				</tr>
-			</table>
+		<form action="/saveItem" method =post modelAttribute = "FoodItems">
+			
+				The Item Number:
+					<input type="text" name="item_number" size="20" readonly="readonly"
+						value= ${foodItem.getItem_number() }>
+			    The Item Name:
+				<input type="text" name="item_name" size="20" readonly="readonly"
+						value= ${foodItem.getItem_name() }>
+				The Cuisine:
+					<input type="text" name="type" size="20" readonly="readonly"
+						value= ${foodItem.getType() }> 
+				*Enter New price:
+					<input type="text" name="price" size="20" value= ${foodItem.getPrice() }>
+				*Enter New availability:
+					<input type="text" name="availability" size="20" value= ${foodItem.getAvailability() }>
+			
 			<input type="submit" name="update">
-		</form:form>
+		</form>
 	</div>
 </body>
 </html>

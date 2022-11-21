@@ -41,26 +41,35 @@ public class FoodController {
 	}
 	
 	@PostMapping("/saveItem")
-	public ModelAndView itemInsertion(@ModelAttribute("FoodItems") FoodItems foodItems) {
+	public ModelAndView itemInsertion(@ModelAttribute("foodItem") FoodItems foodItems) {
 		ModelAndView mv = new ModelAndView("redirect:/homePage");
 		foodService.save(foodItems);
 		return mv;
 	}
 	
-	@GetMapping("/editItem")
-	public ModelAndView editItem(@RequestParam("item_number") String item_number) {
+	@RequestMapping("/editItem")
+	public ModelAndView editFoodItem(@RequestParam("item_number") String item_number) {
 		ModelAndView mv = new ModelAndView("editItem");
 		//FoodItems updatedItems = foodService.getFoodItems(item_number);
 		mv.addObject("FoodItem", foodService.getFoodItems(item_number));
 		return mv;
-	}
+	} 
+	/*
+	@GetMapping("/editItem")
+	public String editItem(@RequestParam(value="item_number") String item_number, Model model){
+		FoodItems foodItem = foodService.getFoodItems(item_number); 
+		model.addAttribute("FoodItems", foodItem);
+		return "update_foodItem";
+	}*/
+	
 	
 	@GetMapping("/deleteItem")
 	public ModelAndView deleteCourse(@RequestParam("item_number") String item_number) {
 		ModelAndView mv = new ModelAndView("redirect:/homePage");
-		foodService.deleteCourseById(item_number);
+		foodService.deleteItem(item_number);
 		return mv;
 	}
 	
 	
+
 }

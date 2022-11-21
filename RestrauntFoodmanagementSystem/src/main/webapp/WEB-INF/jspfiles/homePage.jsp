@@ -41,8 +41,8 @@ table, th, td {
             <td>${foodItem.price}</td>
             <td>${foodItem.availability}</td>
             <td>
-            	<a href="/editItem">Edit</a>
-            	<a href="/deleteItem">Delete</a>
+            	<a href="/editItem?item_number=${foodItem.item_number}">Edit</a>
+            	<a href="/deleteItem?item_number=${foodItem.item_number}">Delete</a>
             </td>
         </tr>
         </c:forEach>
